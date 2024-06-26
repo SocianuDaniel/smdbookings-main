@@ -1,0 +1,7 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    {{ request.site }}
+{% endblock %}
+{% block content %}
+    <a href="{% url 'base:list' %}" >locations</a>
+{% endblock %}

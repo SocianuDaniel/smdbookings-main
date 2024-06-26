@@ -1,0 +1,9 @@
+Django
+phonenumbers
+django-localflavor
+django-countries[pyuca]
+django-phonenumber-field[phonenumberslite]
+django-comuni-italiani
+psycopg2
+Pillow
+

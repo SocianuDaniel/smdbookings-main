@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block nav_login_link %}
+
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+    <a href="{% url 'users:password_reset' %}">reset</a> password
+{% endblock %}
+

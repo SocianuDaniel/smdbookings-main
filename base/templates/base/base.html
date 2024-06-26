@@ -1,0 +1,18 @@
+{% extends 'base/base_main.html' %}
+{% block nav %}
+        {% if user.is_authenticated %}
+            <a href="{% url 'users:logout' %}">Exit</a>
+            <a href="{% url 'users:profile' %}">Profile</a>
+
+            {% else %}
+            <li>
+                <a href="{% url 'users:login' %}">Login</a>
+            </li>
+            <li>
+                <a href="{% url 'users:register' %}">Register</a>
+            </li>
+        {% endif %}
+
+
+
+{% endblock %}

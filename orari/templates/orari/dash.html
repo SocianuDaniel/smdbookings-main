@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% block title %}
+location for {{ user }}
+{% endblock %}
+{% block content %}
+    {{ location }}<br>
+    {% for zi,orari in location.get_orari.items %}
+        {{ zi }}
+        {% for foo in orari %}
+           <b>{{ foo.start }} - {{ foo.fine }}</b>
+            <span> <a href="{% url 'orari:update' foo.pk %}">Edit</a></span>
+            <span> <a href="{% url 'orari:delete' foo.pk %}">Delete</a></span>
+            <b> | </b>
+        {% endfor %}
+        <a href="{% url 'orari:add_orario' location.slug  forloop.counter0 %}">+</a>
+        <br>
+
+    {% endfor %}
+
+
+{% endblock %}

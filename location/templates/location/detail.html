@@ -1,0 +1,44 @@
+{% include 'base/base.html' %}
+{% load static %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            {{ object.name }}<br>
+        </div>
+        <div class="col-md-6">
+            {% for zi,orari in object.get_orari.items %}
+                {{ zi }}
+                {% for foo in orari %}
+                    <b>{{ foo.start }} - {{ foo.fine }}</b> <b> | </b>
+                {% endfor %}
+                <br>
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            {{ object.country }}<br>
+    {{ object.region }}<br>
+    {{ object.province }}<br>
+    {{ object.city }}<br>
+    {{ object.sip_code }}<br>
+    {{ object.street_name }}<br>
+    {{ object.street_number }}<br>
+        </div>
+        <div class="col-12">
+            <img src="{{ object.image.url }}" class="img-fluid">
+        </div>
+        <div class="col-12">
+            {{ object.description }}<br>
+        </div>
+    </div>
+
+
+
+
+
+    <br>
+
+{% endblock %}

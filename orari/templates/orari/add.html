@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block title %}
+location for {{ user }}
+{% endblock %}
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="add orario">
+    </form>
+
+{% endblock %}

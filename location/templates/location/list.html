@@ -1,0 +1,12 @@
+{% include 'base/base.html' %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    locations
+    {% for object in object_list %}
+        <a href="{% url 'base:detail' object.slug %}">{{ object }}</a>
+     <br>
+    {% endfor %}
+{% endblock %}

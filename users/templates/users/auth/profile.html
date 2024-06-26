@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    hi{{ user }}
+    <a href="{% url 'users:password_change' %}">Change password</a>
+    {% if user.user_location.count %}
+        {% with user.user_location.all as my_locations %}
+            {% for location in my_locations %}
+                <a href="{% url 'location:edit' location.slug  %}">{{ location }}</a>
+                <br>
+                <a href="{% url 'location:delete' location.slug %}">delete</a>
+                <a href="{% url 'orari:dash_orario' location.slug %}">dash orario</a>
+                <a href="{% url 'turno:dash_turno' location.slug %}">dash turno</a>
+                <a href="{% url 'turno:add_turno' location.slug %}">add turno </a>
+        {% endfor %}
+        {% endwith %}
+    {% else %}
+        <a href="{% url 'location:add' %}">add location</a>
+    {% endif %}
+
+
+    <a href="{% url 'base:list' %}">locations</a><br>
+
+{% endblock %}

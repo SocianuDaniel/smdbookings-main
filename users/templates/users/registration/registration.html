@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block nav_register_block %}
+
+{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="register">
+    </form>
+
+{% endblock %}

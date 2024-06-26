@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}
+location for {{ user }}
+{% endblock %}
+{% block content %}
+    {{ location }}<br>
+    <a href="{% url 'turno:list-by-date' location.slug anteriore %}"><button><<<<</button></a>
+<a href="{% url 'turno:list-by-date' location.slug prossimo %}"><button>>>>></button></a>
+
+{% for giorno, turno in turni.items %}
+    {{ giorno }}
+    {% for foo in turno %}
+        {{ foo.dip }}
+        {{ foo.orario }}
+    {% endfor %}
+    <br>
+{% endfor %}
+
+
+{% endblock %}
